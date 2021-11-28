@@ -11,7 +11,7 @@ import (
 var logger = log.New(os.Stdout, "", 0)
 
 func main() {
-	http.HandleFunc("/", hello)
+	http.Handle("/", timeMiddleware(http.HandlerFunc(hello)))
 
 	err := http.ListenAndServe(":8080", nil)
 
@@ -21,13 +21,20 @@ func main() {
 }
 
 func hello(wr http.ResponseWriter, r *http.Request) {
-	timeStart := time.Now()
-
 	_, err := wr.Write([]byte("Hello World"))
 	if err != nil {
-		return 
+		return
 	}
+}
 
-	timeElapsed := time.Since(timeStart)
-	fmt.Println("print message:", timeElapsed)
+func timeMiddleware(next http.Handler) http.Handler {
+	return http.HandlerFunc(func(wr http.ResponseWriter, r *http.Request) {
+		timeStart := time.Now()
+
+		// next handler
+		next.ServeHTTP(wr, r)
+
+		timeElapsed := time.Since(timeStart)
+		logger.Println("print message:", timeElapsed)
+	})
 }
