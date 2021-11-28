@@ -11,7 +11,7 @@ import (
 var logger = log.New(os.Stdout, "", 0)
 
 func main() {
-	http.Handle("/", timeMiddleware(http.HandlerFunc(hello)))
+	http.Handle("/", timeMiddleware(HandlerFunc(hello)))
 
 	err := http.ListenAndServe(":8080", nil)
 
@@ -27,8 +27,8 @@ func hello(wr http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func timeMiddleware(next http.Handler) http.Handler {
-	return http.HandlerFunc(func(wr http.ResponseWriter, r *http.Request) {
+func timeMiddleware(next Handler) Handler {
+	return HandlerFunc(func(wr http.ResponseWriter, r *http.Request) {
 		timeStart := time.Now()
 
 		// next handler
