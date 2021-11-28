@@ -1,6 +1,7 @@
 package main
 
 import (
+	"EasyGo/middleware"
 	"fmt"
 	"log"
 	"net/http"
@@ -11,7 +12,7 @@ import (
 var logger = log.New(os.Stdout, "", 0)
 
 func main() {
-	http.Handle("/", timeMiddleware(HandlerFunc(hello)))
+	http.Handle("/", timeMiddleware(middleware.HandlerFunc(hello)))
 
 	err := http.ListenAndServe(":8080", nil)
 
@@ -27,8 +28,8 @@ func hello(wr http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func timeMiddleware(next Handler) Handler {
-	return HandlerFunc(func(wr http.ResponseWriter, r *http.Request) {
+func timeMiddleware(next middleware.Handler) middleware.Handler {
+	return middleware.HandlerFunc(func(wr http.ResponseWriter, r *http.Request) {
 		timeStart := time.Now()
 
 		// next handler
