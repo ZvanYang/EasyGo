@@ -16,7 +16,7 @@ func main() {
 
 	// 需要默认使用controller下面的函数，类似echo
 	router.GET("/", controller.Hello)
-	router.POST("/", controller.UpdateUsername)
+	router.POST("/UpdateUsername", controller.UpdateUsername)
 
 	err := http.ListenAndServe(":8080", nil)
 
