@@ -2,6 +2,6 @@ package controller
 
 import "fmt"
 
-func BaseController()  {
+func BaseController() {
 	fmt.Println("Hello World")
 }

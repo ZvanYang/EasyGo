@@ -1,13 +1,12 @@
 package controller
 
 import (
-	"github.com/julienschmidt/httprouter"
 	"log"
 	"net/http"
 )
 
-func UpdateUsername(w http.ResponseWriter, r *http.Request, ps httprouter.Params)  {
+func UpdateUsername(w http.ResponseWriter, r *http.Request) {
 
-	log.Println(ps)
+	log.Println("12312")
 
 }

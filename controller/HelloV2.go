@@ -6,9 +6,9 @@ import (
 	"net/http"
 )
 
-
-func Hello(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
+func HelloV2(w http.ResponseWriter, r *http.Request) {
 	params := httprouter.ParamsFromContext(r.Context())
 
 	fmt.Fprintf(w, "hello, %s!\n", params.ByName("name"))
+	fmt.Println("hello worldV2")
 }
