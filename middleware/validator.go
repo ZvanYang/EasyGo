@@ -1,10 +1,10 @@
-package main
+package middleware
 
 import (
 	"github.com/go-playground/validator/v10"
 )
 
-type registerReq struct {
+type RegisterReq struct {
 	Username       string `validator:"gt=0"`
 	PasswordNew    string `validator:"gt=0"`
 	PasswordRepeat string `validator:"eqfield=PasswordNew"`
@@ -13,7 +13,7 @@ type registerReq struct {
 
 var validate = validator.New()
 
-func validatorFunc(req registerReq) error {
+func ValidatorFunc(req RegisterReq) error {
 	err := validate.Struct(req)
 
 	if err != nil {

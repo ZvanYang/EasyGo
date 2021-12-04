@@ -73,12 +73,22 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/middleware/validator.go">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/router.go">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/routers.go">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/test/TestValidator.go">
           <value>
             <set />
           </value>
