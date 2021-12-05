@@ -26,18 +26,25 @@ func middleware1(n httprouter.Handle) httprouter.Handle {
 
 func main() {
 
+	all := middleware.NestedMiddleware(middleware.WithLogging, middleware.WithTracing)
+
 	router := httprouter.New()
 
 	// 需要默认使用controller下面的函数，类似echo
 	//router.GET("/", )
 
-	r := middleware.NewRouter()
-	r.Use(middleware.TimeMiddlewareV2)
+	//r := middleware.NewRouter()
+	//r.Use(middleware.TimeMiddlewareV2)
 	//r.Use(middleware.BasicAuth)
 	//r.Add("/hello/:name", controller.HelloV1Handler)
 
 	//router.GET("/hellome", middleware.TimeMiddleware(http.HandlerFunc(controller.HelloV2)))
 	router.GET("/hello/:name", middleware.TimeMiddleware(http.HandlerFunc(controller.HelloV2)))
+
+
+	router.GET("/welcome/:name", middleware.TimeMiddleware(all(controller.HelloV1)))
+
+
 	//router.GET("/hello/:name", middleware1(handler))
 
 	router.GET("/debug/pprof/goroutine", middleware.TimeMiddleware(pprof.Handler("goroutine")))

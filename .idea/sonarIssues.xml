@@ -53,12 +53,22 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/middleware/aboutEndpointHandler.go">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/middleware/baseAuth.go">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/middleware/filter.go">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/middleware/homeEndpointHandler.go">
           <value>
             <set />
           </value>
@@ -104,6 +114,16 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/middleware/validator.go">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/middleware/withLogging.go">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/middleware/withTracing.go">
           <value>
             <set />
           </value>

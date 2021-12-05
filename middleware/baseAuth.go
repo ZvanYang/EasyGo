@@ -11,7 +11,7 @@ func BasicAuth(h http.Handler) httprouter.Handle {
 		_, _, hasAuth := r.BasicAuth()
 
 		if hasAuth {
-			logger.Println("auth   ....")
+			Logger.Println("auth   ....")
 			// Delegate request to the given handle
 			h.ServeHTTP(wr, r)
 		} else {
