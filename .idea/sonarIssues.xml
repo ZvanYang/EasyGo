@@ -3,6 +3,11 @@
   <component name="issues">
     <option name="index">
       <map>
+        <entry key="$PROJECT_DIR$/../../pkg/mod/github.com/julienschmidt/httprouter@v1.3.0/router.go">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/README.md">
           <value>
             <set />
@@ -48,6 +53,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/middleware/baseAuth.go">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/middleware/filter.go">
           <value>
             <set />
@@ -58,7 +68,22 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/middleware/loggerWare.go">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/middleware/ratelimitWare.go">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/middleware/router.go">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/middleware/routerMiddleware.go">
           <value>
             <set />
           </value>
@@ -69,6 +94,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/middleware/timeWare.go">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/middleware/timeoutWare.go">
           <value>
             <set />
           </value>

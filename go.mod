@@ -7,6 +7,7 @@ require (
 	github.com/PuerkitoBio/purell v1.1.1 // indirect
 	github.com/PuerkitoBio/urlesc v0.0.0-20170810143723-de5bf2ad4578 // indirect
 	github.com/alecthomas/template v0.0.0-20190718012654-fb15b899a751 // indirect
+	github.com/aviddiviner/gin-limit v0.0.0-20170918012823-43b5f79762c1 // indirect
 	github.com/cpuguy83/go-md2man/v2 v2.0.1 // indirect
 	github.com/ghodss/yaml v1.0.0 // indirect
 	github.com/gin-contrib/sse v0.1.0 // indirect
@@ -24,6 +25,7 @@ require (
 	github.com/josharian/intern v1.0.0 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
 	github.com/julienschmidt/httprouter v1.3.0 // indirect
+	github.com/justinas/alice v1.2.0 // indirect
 	github.com/leodido/go-urn v1.2.1 // indirect
 	github.com/mailru/easyjson v0.7.7 // indirect
 	github.com/mattn/go-isatty v0.0.14 // indirect
@@ -38,6 +40,7 @@ require (
 	github.com/ugorji/go/codec v1.2.6 // indirect
 	github.com/urfave/cli v1.22.5 // indirect
 	github.com/urfave/cli/v2 v2.3.0 // indirect
+	github.com/urfave/negroni v1.0.0 // indirect
 	golang.org/x/crypto v0.0.0-20211117183948-ae814b36b871 // indirect
 	golang.org/x/net v0.0.0-20211123203042-d83791d6bcd9 // indirect
 	golang.org/x/sys v0.0.0-20211124211545-fe61309f8881 // indirect

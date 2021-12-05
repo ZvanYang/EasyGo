@@ -10,7 +10,6 @@ import (
 	"net/http/pprof"
 )
 
-
 func handler(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 	fmt.Fprintf(w, "Hello %s", ps.ByName("name"))
 }
@@ -25,14 +24,18 @@ func middleware1(n httprouter.Handle) httprouter.Handle {
 	}
 }
 
-
 func main() {
-
 
 	router := httprouter.New()
 
 	// 需要默认使用controller下面的函数，类似echo
 	//router.GET("/", )
+
+	r := middleware.NewRouter()
+	r.Use(middleware.TimeMiddlewareV2)
+	//r.Use(middleware.BasicAuth)
+	//r.Add("/hello/:name", controller.HelloV1Handler)
+
 	//router.GET("/hellome", middleware.TimeMiddleware(http.HandlerFunc(controller.HelloV2)))
 	router.GET("/hello/:name", middleware.TimeMiddleware(http.HandlerFunc(controller.HelloV2)))
 	//router.GET("/hello/:name", middleware1(handler))
@@ -41,7 +44,6 @@ func main() {
 	//router.Handler(http.MethodPost, "/UpdateUsername", middleware.TimeMiddleware(middleware.HandlerFunc(controller.UpdateUsername)))
 	//http.Handle("/helloV2", middleware.TimeMiddleware(middleware.HandlerFunc(controller.HelloV2)))
 	//http.Handle("/helloV1", middleware.TimeMiddleware(middleware.HandlerFunc(controller.HelloV1)))
-
 
 	err := http.ListenAndServe(":8080", router)
 	if err != nil {
