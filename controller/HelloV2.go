@@ -9,6 +9,9 @@ import (
 func HelloV2(w http.ResponseWriter, r *http.Request) {
 	params := httprouter.ParamsFromContext(r.Context())
 
-	fmt.Fprintf(w, "hello, %s!\n", params.ByName("name"))
+	_, err := fmt.Fprintf(w, "hello, %s!\n", params.ByName("name"))
+	if err != nil {
+		return 
+	}
 	fmt.Println("hello worldV2")
 }

@@ -1,14 +1,14 @@
-package middleware
+package validate
 
 import (
 	"github.com/go-playground/validator/v10"
 )
 
 type RegisterReq struct {
-	Username       string `validator:"gt=0"`
-	PasswordNew    string `validator:"gt=0"`
-	PasswordRepeat string `validator:"eqfield=PasswordNew"`
-	Email          string `validator:"email"`
+	Username       string `validate:"gt=0"`
+	PasswordNew    string `validate:"gt=0"`
+	PasswordRepeat string `validate:"eqfield=PasswordNew"`
+	Email          string `validate:"email"`
 }
 
 var validate = validator.New()

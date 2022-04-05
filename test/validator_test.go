@@ -1,19 +1,19 @@
 package test
 
 import (
-	"EasyGo/middleware"
+	"EasyGo/validate"
 	"fmt"
 	"testing"
 )
 
 func TestValidator(t *testing.T)  {
-	req := middleware.RegisterReq{
+	req := validate.RegisterReq{
 		Username:       "Xargin",
 		PasswordNew:    "ohno",
 		PasswordRepeat: "ohn",
 		Email:          "alex@abc.com",
 	}
 
-	err := middleware.ValidatorFunc(req)
+	err := validate.ValidatorFunc(req)
 	fmt.Println(err)
 }
